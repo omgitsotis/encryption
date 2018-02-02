@@ -48,7 +48,7 @@ Outputs:
 
 ### Go client interface
 
-A client interface has also been provided. Please implement a client which 
+A client interface has also been provided. Please implement a client which
 satisfies the interface in order to interact with the above server.
 
 ### Extra credits
@@ -73,3 +73,23 @@ git repository.
 Your solution should also be easy to run/verify. To that end please feel free to
 provide any further instructions, documentation, etc on how to go about the
 verification process.
+
+### Usage
+
+- Creates a local server on port 8000
+- All methods are POST
+- Routes are `/store/{id}` and `/retrieve/{id}`
+
+Example curl:
+```
+curl -X POST \
+  http://localhost:8000/store/test_1 \
+  -H 'Content-Type: text/plain' \
+  -d 'This is a message to encrypt'
+```
+```
+curl -X POST \
+  http://localhost:8000/retrieve/test_1 \
+  -H 'Content-Type: text/plain' \
+  -d xM7fE0ne8S9eX5jCtJrHXPbL4e1T39tUOkEZLonw1ao=
+```
